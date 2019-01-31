@@ -3,8 +3,8 @@ require 'sinatra/flash'
 require './lib/hangperson_game.rb'
 
 class HangpersonApp < Sinatra::Base
-  post '/new' do
-    "Hello World"
+  get '/new' do
+    erb :new
   end
 
   enable :sessions
@@ -22,10 +22,6 @@ class HangpersonApp < Sinatra::Base
   # to help you with the rest of the assignment
   get '/' do
     redirect '/new'
-  end
-  
-  get '/new' do
-    erb :new
   end
   
   post '/create' do
